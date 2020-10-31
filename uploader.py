@@ -26,11 +26,11 @@ def delete(action, name, exc):
 while True:
     sleep(10)
     Repo.clone_from('https://github.com/steve10live/e-objects', temp_folder)  # клонируем библиотеку с гитхаба
-    current_version_text = os.environ.get('version')
+    current_version_text = re.sub('\n', '', os.environ.get('version'))
     current_version = int(re.sub(r'\D', '', current_version_text))
     try:
         get_new_version = open(temp_folder + '/version')
-        new_version_text = get_new_version.read()
+        new_version_text = re.sub('\n', '', get_new_version.read())
         new_version = int(re.sub(r'\D', '', new_version_text))
         get_new_version.close()
     except IndexError and Exception:
