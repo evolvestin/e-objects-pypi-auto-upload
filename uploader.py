@@ -14,7 +14,7 @@ data = literal_eval(base64.b64decode(data).decode('utf-8'))
 temp_folder = 'temp'
 
 
-if os.environ.get('server') is None:
+if os.environ.get('version') is None:
     os.environ['version'] = '1.0.0'
 
 
