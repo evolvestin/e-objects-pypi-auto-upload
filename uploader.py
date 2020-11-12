@@ -58,7 +58,7 @@ while True:
                 config = app.config()
                 config['version'] = new_version_text
 
-        release_notify_text = bold('Released:\n') + code('e-objects ') + 'ver.' + code(' ' + new_version_text)
+        release_notify_text = bold('Released:\n') + code('e-objects ') + 'ver. ' + code(new_version_text)
         objects.AuthCentre(os.environ['TOKEN']).send_dev_message(release_notify_text, tag=None)
         # коннектимся к Bot API телеграма через e-objects и тут же отправляем в мой чатик с уведомлениями от ботов
     else:
